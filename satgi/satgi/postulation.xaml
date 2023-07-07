@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="satgi.postulation">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Label Text="Postuler" TextColor="Black" FontSize="25" FontAttributes="Bold" Margin="20,40,0,20"  />
+                <Label Text=" Mettre en valeur votre candidature et joignez toutes les informations utiles pour que le recruteur puisse vous contacter." Margin="20,10,0,20" />
+                <Frame WidthRequest="60" HeightRequest="30"  CornerRadius="10" Margin="40,10" Padding="30">
+                    <Grid ColumnDefinitions="auto,auto,auto" RowSpacing="40" >
+                        <Image Grid.Column="0" Source="cv.png" HeightRequest="300" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,10,0" />
+                        <Label  Grid.Column="1" x:Name="filename"  TextColor="Black" FontSize="Body" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                        <Image x:Name="add" Grid.Column="2" Source="plus.png" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="End" Margin="120,0,0,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectImageButton_Clicked" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+
+                </Frame>
+                <Grid RowDefinitions="Auto,Auto" RowSpacing="20" Margin="30">
+                    <Label Grid.Row="0" Text="Lettre de motivation" TextColor="Black" FontSize="15" FontAttributes="Bold" />
+                    <Editor Grid.Row="1"
+        x:Name="myEditor"
+        HeightRequest="200"
+        BackgroundColor="White"
+        TextColor="Black"
+    />
+                </Grid>
+                <Grid ColumnDefinitions="auto,auto" ColumnSpacing="0">
+                    <Button Grid.Column="0" Text="Update" BackgroundColor="#96e072" CornerRadius="20" Margin="20,0,10,20" Padding="60,0" TextColor="White"  Clicked="Button_Clicked" />
+                    <Button Grid.Column="1" Text="Delete" BackgroundColor="#96e072" CornerRadius="20" Margin="20,0,10,20" Padding="60,0" TextColor="White" Clicked="Button_Clicked_1" />
+
+                </Grid>
+            </StackLayout>
+
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

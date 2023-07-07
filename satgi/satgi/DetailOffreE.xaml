@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:autocomplet="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             x:Class="satgi.DetailOffreE">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image  x:Name="etat"   HeightRequest="50"  Margin="300,20,0,0" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="changeetat" />
+                    </Image.GestureRecognizers>
+                </Image>
+               
+                    <Label   Text="Offres" TextColor="Black" FontSize="25" FontAttributes="Bold" Margin="20,-40,0,20"  />
+                   
+                       
+               
+
+                <Frame>
+                    <Grid ColumnDefinitions="30,*">
+
+                        <Image Source="titre.png" HeightRequest="25" VerticalOptions="Center" Grid.Column="0" />
+                        <autocomplet:SfAutoComplete x:Name="Titre" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  ShowBorder="False"  />
+
+                    </Grid>
+                </Frame>
+                <Frame>
+                    <Grid ColumnDefinitions="30,*">
+
+                        <Image Source="entr.png" HeightRequest="40" VerticalOptions="Center" Grid.Column="0" />
+                        <autocomplet:SfAutoComplete x:Name="Entreprise" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  ShowBorder="False"  />
+
+                    </Grid>
+                </Frame>
+                <Frame>
+                    <Grid ColumnDefinitions="30,*">
+
+                        <Image Source="localisation.png" HeightRequest="40" VerticalOptions="Center" Grid.Column="0" />
+                        <autocomplet:SfAutoComplete x:Name="Adress" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  ShowBorder="False"  />
+
+                    </Grid>
+                </Frame>
+                <Label Text=" Information Sur la Poste " TextColor="Black" FontSize="15" FontAttributes="Bold"   Margin="20,20,0,20"/>
+
+
+
+
+                <!--************Description Poste***********-->
+                <Frame BorderColor="Transparent">
+                    <Grid ColumnDefinitions="30,*">
+
+                        <Image Grid.Column="0" Source="desc_entr.png" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Start" />
+                        <Editor Grid.Column="1" x:Name="descPost"  Margin="10,-6"  HeightRequest="100" BackgroundColor="White" TextColor="Black"  />
+                    </Grid>
+                </Frame>
+                <!--Profile -->
+                <Label Text=" Profile Souhaité  " TextColor="Black" FontSize="15" FontAttributes="Bold"   Margin="20,20,0,20"/>
+                <!--Formation-->
+                <Frame>
+                    <Grid ColumnDefinitions="30,*">
+
+                        <Image Source="formation.png" HeightRequest="25" VerticalOptions="Center" Grid.Column="0" />
+                        <autocomplet:SfAutoComplete x:Name="diplome" Grid.Column="1" HorizontalOptions="FillAndExpand"  VerticalOptions="Center"  ShowBorder="False"  />
+
+                    </Grid>
+                </Frame>
+                <!--Hard Skills-->
+                <Frame BorderColor="Transparent">
+                    <Grid ColumnDefinitions="60,*" Margin="-20,0">
+
+                        <Image Source="hardskils.png" HeightRequest="65" Margin="-10,-15" HorizontalOptions="Start" VerticalOptions="Start" Grid.Column="0" />
+                        <Editor Grid.Column="1" x:Name="hSkils"  Margin="-10,-6"  HeightRequest="100" BackgroundColor="White" TextColor="Black"  />
+
+
+                    </Grid>
+                </Frame>
+                <!--Soft Skills-->
+                <Frame BorderColor="Transparent">
+                    <Grid ColumnDefinitions="60,*" >
+
+                        <Image Source="soft.png" HeightRequest="35"  HorizontalOptions="Start" VerticalOptions="Start" Grid.Column="0" />
+                        <Editor Grid.Column="1" x:Name="SSkils"  Margin="-20,-6"  HeightRequest="100" BackgroundColor="White" TextColor="Black"  />
+
+
+                    </Grid>
+                </Frame>
+
+                <Grid  ColumnDefinitions="Auto,Auto" ColumnSpacing="25" Margin="20,20" >
+                    <Button Grid.Column="0" Text="Update" BackgroundColor="#96e072" CornerRadius="20" Padding="30,0" TextColor="White" Clicked="update"/>
+                    <Button Grid.Column="1" Text="Delete" BackgroundColor="#96e072" CornerRadius="20" Padding="30,0" TextColor="White" Clicked="delete"/>
+
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+       
+    </ContentPage.Content>
+</ContentPage>

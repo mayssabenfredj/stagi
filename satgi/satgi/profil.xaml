@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="satgi.profil">
+        <ContentPage x:Name="C1" >
+            <StackLayout  x:Name="S1"  >
+                <Image x:Name="Im1" Source="empty.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <Button x:Name="B1" Text="Add offres " BackgroundColor="White" CornerRadius="20" Clicked="goToAdd" BorderColor="#96e072"  BorderWidth="1" Margin="40,20" />
+
+
+            <ScrollView x:Name="scroll"  Margin="10,20,10,0">
+
+
+                    <CollectionView x:Name="userOffresList" ItemsSource="{Binding off}" BackgroundColor="Transparent">
+
+                        <CollectionView.ItemTemplate   >
+                            <DataTemplate >
+
+                                <StackLayout Margin="0,0,0,20">
+                                    <Frame HasShadow="True"  CornerRadius="10" >
+                                    <Grid RowDefinitions="35,Auto,Auto,Auto,1,Auto" RowSpacing="10" >
+                                        <BoxView Grid.Row="0" BackgroundColor="Transparent" Margin="-20,-20,-20,0">
+                                        </BoxView>
+                                        <Image Source="{Binding etat}" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="End" Margin="0,-10"/>
+                                        <Label x:Name="Titre" Grid.Row="0" Text="{Binding titre}"  TextColor="Black" FontAttributes="Bold" ></Label>
+                                        <Label Grid.Row="1" Text="{Binding entrprise}" TextColor="#202020" Margin="0,-20,0,0"></Label>
+                                        <Label Grid.Row="2" Text="{Binding adress}" TextColor="#202020"></Label>
+                                        <Label Grid.Row="3" Text="{Binding  profileDiplome}" TextColor="#202020"></Label>
+
+
+                                        <BoxView Grid.Row="4" BackgroundColor="#F6C077"></BoxView>
+
+                                       
+                                        <Grid Grid.Row="5" ColumnDefinitions="auto,auto" ColumnSpacing="30">
+                                            <Label Grid.Column="0" Text="{Binding date}" TextColor="#202020"></Label>
+                                            <Image Grid.Column="1" x:Name="Im2" Source="plus.png" HeightRequest="20" VerticalOptions="Center" Margin="160,0,0,0"  >
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="goToDetail" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+
+                                           
+
+
+                                        </Grid>
+
+                                        </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer  Tapped="TapGestureRecognizer_Tapped1" />
+                                    </Frame.GestureRecognizers>
+
+                                </Frame>
+                                </StackLayout>
+
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </ScrollView>
+            </StackLayout>
+
+        </ContentPage>
+       
+        <ContentPage  x:Name="C3"  IsVisible="true" >
+            <StackLayout  x:Name="S3"  >
+                <Image x:Name="Im3" Source="empty.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <ScrollView x:Name="scroll3"  Margin="10,20,10,0">
+
+
+                    <CollectionView x:Name="userOffresListD" ItemsSource="{Binding offd}" BackgroundColor="Transparent">
+
+                        <CollectionView.ItemTemplate   >
+                            <DataTemplate >
+
+                                <StackLayout Margin="0,0,0,20">
+                                    <Frame HasShadow="True"  CornerRadius="10" >
+                                    <Grid RowDefinitions="35,Auto,Auto,Auto,1,Auto" RowSpacing="10" >
+                                        <BoxView Grid.Row="0" BackgroundColor="Transparent" Margin="-20,-20,-20,0">
+                                        </BoxView>
+                                        <Image Source="{Binding etat}" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="End" Margin="0,-10"/>
+                                        <Label x:Name="Titre" Grid.Row="0" Text="{Binding titre}"  TextColor="Black" FontAttributes="Bold" ></Label>
+                                        <Label Grid.Row="1" Text="{Binding entrprise}" TextColor="#202020" Margin="0,-20,0,0"></Label>
+                                        <Label Grid.Row="2" Text="{Binding adress}" TextColor="#202020"></Label>
+                                        <Label Grid.Row="3" Text="{Binding  profileDiplome}" TextColor="#202020"></Label>
+
+
+                                        <BoxView Grid.Row="4" BackgroundColor="#F6C077"></BoxView>
+
+
+                                        <Grid Grid.Row="5" ColumnDefinitions="auto,auto" ColumnSpacing="30">
+                                            <Label Grid.Column="0" Text="{Binding date}" TextColor="#202020"></Label>
+                                            <Image Grid.Column="1" x:Name="Im2" Source="plus.png" HeightRequest="20"   Margin="160,0,0,0" >
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="goToDetail" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+
+
+
+
+                                        </Grid>
+
+                                    </Grid>
+                                    <Frame.GestureRecognizers >
+                                        <TapGestureRecognizer x:Name="" Tapped="TapGestureRecognizer_Tapped2" />
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                                </StackLayout>
+
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </ScrollView>
+            </StackLayout>
+        </ContentPage>
+
+</TabbedPage>

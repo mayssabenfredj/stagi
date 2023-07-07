@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="satgi.login" Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#96e072"
+             >
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Margin="0,30" Source="logo.png" Aspect="AspectFit" HeightRequest="110" WidthRequest="80"></Image>
+            <Frame Grid.Row="1" Margin="0,0,0,-40" BorderColor="#96e072" HasShadow="True"  CornerRadius="50" HeightRequest="700">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,50,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Welcome Back!" FontSize="24" FontAttributes="Bold" TextColor="#96e072" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Login in to account" TextColor="Black"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="mail" Grid.Row="2" Placeholder="Email" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <StackLayout  Grid.Row="3" Orientation="Horizontal">
+                        <Entry  x:Name="password" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                        <Image Source="showpass.png" HeightRequest="20" WidthRequest="20"   Margin="0,10" HorizontalOptions="End"  x:Name="image"  >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Showpass" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                   
+                    <Button Grid.Row="4" Text="Login" BackgroundColor="#96e072" CornerRadius="20" Clicked="goToHome"></Button>
+                    <Label Grid.Row="7" Text="Forget Password" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label HorizontalOptions="Center" Grid.Row="8" Margin="0,-10,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="D'ont Have An Account !" TextColor="Gray"/>
+                                <Span Text="Sign up here" TextColor="Black" FontAttributes="Bold" TextDecorations="Underline"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="goToRegister"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                  <!--  <Label Grid.Row="8" Margin="0,-10,0,0" Text="Don't have an account? Sign up here" HorizontalOptions="CenterAndExpand"></Label>-->
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

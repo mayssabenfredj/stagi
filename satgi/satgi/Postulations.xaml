@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="satgi.Postulations">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Image x:Name="Im1" Source="empty.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <ScrollView x:Name="scroll">
+            
+       
+            <CollectionView x:Name="PostsList" ItemsSource="{Binding allpost}"  BackgroundColor="#F3F5F9">
+                <CollectionView.ItemTemplate  >
+                    <DataTemplate >
+                        <StackLayout Margin="10,10,10,20">
+                            <Frame HasShadow="True"  CornerRadius="10" Margin="20,20" >
+                                <Grid RowDefinitions="35,Auto,1,Auto,Auto" RowSpacing="10"  >
+
+                                    <Label x:Name="Full Name" Grid.Row="0" Text="Mayssa Ben Fredj"  TextColor="Black" FontAttributes="Bold"></Label>
+                                    <Label Grid.Row="1" Text="02-March-2022" TextColor="#202020" Margin="0,-20,0,0"></Label>
+
+                                    <BoxView Grid.Row="2" BackgroundColor="#F6C077"></BoxView>
+                                    <Label Grid.Row="3" x:Name="motivation" Text="{Binding lettre}" TextColor="Black" FontSize="16" />
+                                    <Frame Grid.Row="4" WidthRequest="60" HeightRequest="30"  CornerRadius="10" Margin="40,10" Padding="30">
+                                        <Grid ColumnDefinitions="auto,auto,auto" RowSpacing="40" >
+                                            <Image Grid.Column="0" Source="cv.png" HeightRequest="300" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,10,0" />
+                                            <Label  Grid.Column="1" x:Name="filename" Text="{Binding cv_name }" TextColor="Black" FontSize="Body" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+
+                                        </Grid>
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+
+
+
+                                </Grid>
+
+
+                            </Frame>
+                        </StackLayout>
+
+                    </DataTemplate>
+
+                  
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

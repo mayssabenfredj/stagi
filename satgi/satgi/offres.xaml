@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:autocomplet="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             x:Class="satgi.offres">
+    <ContentPage.Content>
+        <Grid  BackgroundColor="#F3F5F9" RowSpacing="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid BackgroundColor="#96e072"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout Margin="0,-30,0,0" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image  Source="logo.png" Aspect="AspectFit" HeightRequest="110" WidthRequest="180"></Image>
+                    <Label TextColor="White" Margin="0,-30" Text="Offres" FontSize="20" HorizontalTextAlignment="Center"  />
+                    
+                </StackLayout>
+            </Grid>
+           
+                        <StackLayout Grid.Row="2" Margin="10,-20,10,0">
+                <Frame  Padding="20,5" CornerRadius="30" >
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="searchbar.png" HeightRequest="20" VerticalOptions="Center" Grid.Column="0" />
+                        <SearchBar x:Name="searchText" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  TextColor="Gray" TextChanged="searchText_TextChanged"  />
+                        <Image Grid.Column="2" Source="micro.png" HeightRequest="30" VerticalOptions="Center" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="record" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+           
+                        <StackLayout  Grid.Row="2" Margin="0,30,0,0" Padding="20,10">
+                <CollectionView x:Name="OffresList"  BackgroundColor="Transparent" >
+
+                    <CollectionView.ItemTemplate   >
+                        <DataTemplate >
+                          
+                                <StackLayout Margin="0,0,0,20">
+                                    <Frame HasShadow="True"  CornerRadius="10" >
+                                        <Grid RowDefinitions="35,Auto,Auto,Auto,1,Auto" RowSpacing="10" >
+                                            <BoxView Grid.Row="0" BackgroundColor="Transparent" Margin="-20,-20,-20,0">
+                                            </BoxView>
+                                        <Image Source="{Binding etat}" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="End" Margin="0,-10"/>
+                                            <Label x:Name="Titre" Grid.Row="0" Text="{Binding titre}"  TextColor="Black" FontAttributes="Bold" ></Label>
+                                        <Label Grid.Row="1" Text="{Binding entrprise}" TextColor="#202020" Margin="0,-20,0,0"></Label>
+                                        <Label Grid.Row="2" Text="{Binding adress}" TextColor="#202020"></Label>
+                                        <Label Grid.Row="3" Text="{Binding  profileDiplome}" TextColor="#202020"></Label>
+
+
+                                        <BoxView Grid.Row="4" BackgroundColor="#F6C077"></BoxView>
+
+                                        <Label Grid.Row="5" Text="{Binding date}" TextColor="#202020"></Label>
+
+                                    </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                    </Frame.GestureRecognizers>
+
+                                </Frame>
+                                </StackLayout>
+                                
+                           
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+            </StackLayout>
+
+        </Grid>
+     
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="iconexample" Icon="lout.png" Priority="0" Order="Primary" Clicked="logout"  />
+    </ContentPage.ToolbarItems>
+</ContentPage>

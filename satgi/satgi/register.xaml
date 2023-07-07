@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="satgi.register"
+               BackgroundColor="#96e072"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Margin="0,30" Source="logo.png" Aspect="AspectFit" HeightRequest="110" WidthRequest="80"></Image>
+            <Frame Grid.Row="1" Margin="0,0,0,-40" BorderColor="#96e072" HasShadow="True"  CornerRadius="50" HeightRequest="1000">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,10,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Register" FontSize="24" FontAttributes="Bold" TextColor="#96e072" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Creat New Account !" TextColor="Black"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="email" Grid.Row="2" Placeholder="Email" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Label x:Name="emailEror" Text="3" TextColor="Transparent" />
+                    <Entry x:Name="username" Grid.Row="4" Placeholder="Username"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <StackLayout  Grid.Row="5" Orientation="Horizontal">
+                        <Entry  x:Name="password" Placeholder="Password" IsPassword="True" Margin="0,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                        <Image Source="showpass.png" HeightRequest="20" WidthRequest="20"   Margin="0,10" HorizontalOptions="End"  x:Name="image"  >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Showpass" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    
+                    <Label Text="You'are a ?" Grid.Row="6" />
+                    <StackLayout Orientation="Horizontal" Grid.Row="7" RadioButtonGroup.GroupName="Role" x:Name="Role">
+
+                        <RadioButton x:Name="student"  Value="Student" Content="Student" BorderColor="#96e072" BackgroundColor="Transparent" />
+                        <RadioButton x:Name="entreprise" Value="Entreprise" Content="Entreprise" BorderColor="#96e072" BackgroundColor="Transparent"/>
+                       
+                    </StackLayout>
+                    <Label Text="" x:Name="r" TextColor="Transparent"/>
+
+                    <Button Grid.Row="8" Text="Register" BackgroundColor="#96e072" CornerRadius="20" Clicked="registerUser" />
+
+                    <Label HorizontalOptions="Center" Grid.Row="9" Margin="0,-10,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="You Have An Account !" TextColor="Gray"/>
+                                <Span Text="Sign In here" TextColor="Black" FontAttributes="Bold" TextDecorations="Underline"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="goToLogin"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

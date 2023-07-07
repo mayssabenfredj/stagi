@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="satgi.home"
+             BackgroundColor="#96e072"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+  <ContentPage.Content>
+        <StackLayout>
+
+            <Image Margin="10"  Source="search.png" Aspect="AspectFit" HeightRequest="300" WidthRequest="80"></Image>
+            <Image Margin="10"  Source="logo.png" Aspect="AspectFit" HeightRequest="100" WidthRequest="60"></Image>
+            <!--<Label Text="STᗩᘜI" TextColor="Black" HorizontalOptions="Center" FontSize="60" FontAttributes="Bold"/>-->
+            <Frame Padding="20" Margin="0,0,0,-40" BorderColor="#96e072" HasShadow="True"  CornerRadius="50" VerticalOptions="EndAndExpand" HeightRequest="200">
+                <StackLayout VerticalOptions="Center"  HorizontalOptions="Center" >
+                    <Button Padding="150,0,150,0" Text="Login" BackgroundColor="#96e072" CornerRadius="20" Clicked="goToLogin"></Button>
+                    <Button  Text="Register" BackgroundColor="#96e072" CornerRadius="20" Clicked="goToRegister"></Button>
+
+                </StackLayout>
+                    
+                    
+                
+            </Frame>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

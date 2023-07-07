@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="satgi.Detail">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout >
+                <Grid  ColumnDefinitions="Auto,Auto" ColumnSpacing="20" Margin="20,40,0,20">
+                    <Label  x:Name="Titre" Grid.Column="0"  TextColor="Black" FontSize="15" FontAttributes="Bold"  />
+                    <Image x:Name="etat" Grid.Column="1" Source="progres.png" HeightRequest="45" HorizontalOptions="End" VerticalOptions="Start" Margin="100,-10,0,0" />
+                </Grid>
+                <Grid  ColumnDefinitions="Auto,Auto" ColumnSpacing="20" Margin="40,-20,0,10">
+
+                    <Image Grid.Column="0" Source="entr.png" HeightRequest="25" HorizontalOptions="Start" />
+                    <Label Grid.Column="1"  x:Name="Entreprise"  TextColor="Black" FontSize="13" FontAttributes="None" VerticalOptions="Center" />
+
+                </Grid>
+                <Grid  ColumnDefinitions="Auto,Auto" ColumnSpacing="20" Margin="40,-5,0,10">
+
+                    <Image Grid.Column="0"  Source="local.png" HeightRequest="30" HorizontalOptions="Start" />
+                    <Label Grid.Column="1" x:Name="Adress"  TextColor="Black" FontSize="13" FontAttributes="None" VerticalOptions="Center" />
+
+                </Grid>
+
+                <Label Text=" Information Sur la Poste " TextColor="Black" FontSize="15" FontAttributes="Bold"   Margin="20,20,0,20"/>
+               
+              
+                <!--Description-->
+                <BoxView  HorizontalOptions="FillAndExpand"  VerticalOptions="Center" HeightRequest="1" BackgroundColor="DarkGray" Margin="30,0"></BoxView>
+                <Grid  ColumnDefinitions="Auto,Auto" ColumnSpacing="15" Margin="40,10,0,15">
+
+                    <Image Grid.Column="0"  Source="desc_entr.png" HeightRequest="30" HorizontalOptions="Start" VerticalOptions="Start" />
+                    <Label Grid.Column="1" x:Name="descPost" TextColor="Black" FontSize="15" FontAttributes="None" VerticalOptions="EndAndExpand"/>
+
+                </Grid>
+
+                <!--Profile -->
+                <Label Text=" Profile Souhaité  " TextColor="Black" FontSize="15" FontAttributes="Bold"   Margin="20,20,0,20"/>
+                <!--Formation-->
+                <Grid  ColumnDefinitions="Auto,Auto" ColumnSpacing="15" Margin="40,-5,0,10">
+
+                    <Image Grid.Column="0"  Source="formation.png" HeightRequest="30" HorizontalOptions="Start" VerticalOptions="Start" />
+                    <Label Grid.Column="1" x:Name="diplome" TextColor="Black" FontSize="15" FontAttributes="None" VerticalOptions="Center" />
+                </Grid>
+                <!--Hard Skills-->
+                <BoxView  HorizontalOptions="FillAndExpand"  VerticalOptions="Center" HeightRequest="1" BackgroundColor="DarkGray" Margin="30,0"></BoxView>
+
+                <Grid  ColumnDefinitions="Auto,Auto" ColumnSpacing="15" Margin="20,10,0,10">
+                    <Image Grid.Column="0"  Source="hardskils.png" HeightRequest="30" HorizontalOptions="Start" />
+                    <Label Grid.Column="1" x:Name="hSkils" TextColor="Black" FontSize="15" FontAttributes="None" VerticalOptions="Center" Margin="-20,0,0,0" />
+                </Grid>
+                <!--Soft Skills-->
+                <BoxView  HorizontalOptions="FillAndExpand"  VerticalOptions="Center" HeightRequest="1" BackgroundColor="DarkGray" Margin="30,0"></BoxView>
+
+                <Grid  ColumnDefinitions="Auto,Auto" ColumnSpacing="15" Margin="40,10,0,10">
+                    <Image Grid.Column="0"  Source="soft.png" HeightRequest="30" HorizontalOptions="Start" />
+                    <Label Grid.Column="1" x:Name="SSkils" TextColor="Black" FontSize="15" FontAttributes="None" VerticalOptions="Center" />
+                </Grid>
+
+               
+                <Grid  ColumnDefinitions="Auto,Auto" ColumnSpacing="25" Margin="20,20" >
+                    <Button Grid.Column="0" x:Name="postuler" Text="Postuler" BackgroundColor="#96e072" CornerRadius="20" Padding="30,0" TextColor="White" Clicked="goToPostule" />
+                    <Image Grid.Column="1" x:Name="like" Source="coeurVide.png" HeightRequest="40" WidthRequest="60" VerticalOptions="StartAndExpand" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Like" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
